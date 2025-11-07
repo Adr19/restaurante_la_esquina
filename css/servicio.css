@@ -1,0 +1,136 @@
+/* HERO */
+.hero-servicio {
+  background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero-servicio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* DESCRIPCIÓN */
+.descripcion {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.descripcion h2 {
+  color: var(--rojo);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.descripcion p {
+  font-size: 1.1rem;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* GALERÍA */
+.galeria {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.galeria h2 {
+  font-size: 2rem;
+  color: var(--rojo);
+  margin-bottom: 30px;
+}
+
+.video-container {
+  margin-bottom: 40px;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes img {
+  width: 22%;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.imagenes img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACTA */
+.contacta {
+  text-align: center;
+  padding: 80px 10%;
+  color: var(--dorado);
+}
+
+.contacta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.btn-contacto {
+  background-color: var(--dorado);
+  color: var(--burdeos);
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-contacto:hover {
+  background-color: var(--rojo);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 425px) {
+  .imagenes img {
+    width: 100%;
+  }
+
+  .descripcion{
+    padding: 20px 10%;
+  }
+
+  .galeria{
+    padding: 20px 10%;
+  }
+
+  .contacta{
+    padding: 30px 10%;
+  }
+}

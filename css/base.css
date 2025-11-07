@@ -1,0 +1,47 @@
+:root {
+    --rojo: #C41E3A;
+    --dorado: #FFC72C;
+    --crema: #FFF8F0;
+    --burdeos: #B0303B;
+    --texto: #2E2E2E;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--crema);
+    color: var(--texto);
+    line-height: 1.6;
+    
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    font-family: 'Noto Serif TC', serif;
+}
+
+h1 {
+    color: var(--dorado);
+}
+
+h2 {
+    color: var(--rojo);
+}

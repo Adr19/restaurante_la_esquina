@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurante La Esquina</title>
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/servicios.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/servicios.css">
 
 </head>
 <body>
@@ -14,6 +14,13 @@
   <div class="logo-container">
     <img src="https://cdn-icons-png.flaticon.com/512/5900/5900415.png" alt="Logo Restaurante El Chino de la Esquina" class="logo">
   </div>
+
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <nav class="main-nav">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
@@ -22,11 +29,12 @@
       <a href="blog.html">Blog</a>
       <a href="contacto.html">Contacto</a>
   </nav>
-
   <div class="banner-formacion">
-    Esto es una página web creada para la formación de Desarrollo web
+    <div class="sub-banner">Página Web Ficticia</div>
+    <div class="banner-texto">
+      Esto es un sitio web creado como proyecto Final para la formación Dual de Desarrollo Web.
+    </div>
   </div>
-</header>
 
 <!-- HERO -->
 <section class="hero hero-servicios">
@@ -87,5 +95,10 @@
     </div>
 </footer>
 
+  <script src="../js/menu_hamburguesa.js"></script>
+  <script src="../js/menu_fijo.js"></script>
+  <script src="../js/banner_formacion_scroll.js"></script>
+  <script src="../js/fadeSections.js"></script>
+  <script src="../js/portfolioCarousel.js"></script>
 </body>
 </html>

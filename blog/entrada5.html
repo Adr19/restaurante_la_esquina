@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrada 5</title>
-  <link rel="stylesheet" href="../../css/base.css">
-  <link rel="stylesheet" href="../../css/layout.css">
-  <link rel="stylesheet" href="../../css/entrada.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/entrada.css">
 </head>
 
 <body>
@@ -16,18 +16,26 @@
       <img src="https://cdn-icons-png.flaticon.com/512/5900/5900415.png" alt="Logo Restaurante El Chino de la Esquina" class="logo">
     </div>
 
-    <nav class="main-nav">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="quienes_somos.html">Quiénes somos</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html" class="activo">Blog</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+    <button class="menu-toggle" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
 
+    <nav class="main-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="../servicios.html">Servicios</a>
+      <a href="../quienes_somos.html">Quiénes somos</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="activo">Blog</a>
+      <a href="../contacto.html">Contacto</a>
+    </nav>
     <div class="banner-formacion">
-      Esto es una página web creada para la formación de Desarrollo web
+    <div class="sub-banner">Página Web Ficticia</div>
+    <div class="banner-texto">
+      Esto es un sitio web creado como proyecto Final para la formación Dual de Desarrollo Web.
     </div>
+  </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -60,5 +68,11 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
     </div>
   </footer>
+
+  <script src="../js/menu_hamburguesa.js"></script>
+  <script src="../js/menu_fijo.js"></script>
+  <script src="../js/banner_formacion_scroll.js"></script>
+  <script src="../js/fadeSections.js"></script>
+  <script src="../js/portfolioCarousel.js"></script>
 </body>
 </html>

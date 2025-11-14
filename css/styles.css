@@ -1,0 +1,694 @@
+/* =========================
+   UNIFIED / MERGED CSS
+   Generated from your files
+   ========================= */
+
+/* ---- :root (colores y variables globales) ---- */
+:root{
+  --rojo:#C41E3A;
+  --dorado:#FFC72C;
+  --crema:#FFF8F0;
+  --burdeos:#B0303B;
+  --texto:#2E2E2E;
+  --header-height:120px;
+}
+
+/* ---- RESET / BASE ---- */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{
+  font-family:'Lato',sans-serif;
+  background-color:var(--crema);
+  color:var(--texto);
+  line-height:1.6;
+}
+img{width:100%;height:auto;display:block;border-radius:8px}
+h1,h2{font-family:'Noto Serif TC',serif}
+h1{color:var(--dorado)}
+h2{color:var(--rojo)}
+h2{
+  text-align: center;
+}
+/* ---- LAYOUT / HEADER / NAV / FOOTER (from layout.css) ---- */
+.site-header{
+  position:fixed;top:0;left:0;width:100%;z-index:3000;
+  background-color:var(--burdeos);transition:all .3s ease;
+  display:flex;flex-direction:column;align-items:center;transform:translateZ(0)
+}
+.logo-container{padding:0;display:flex;justify-content:center;align-items:center;width:100%}
+.logo{width:150px;height:150px;object-fit:contain;transition:all .3s ease}
+.main-nav{display:flex;justify-content:center;gap:30px;width:100%;background-color:var(--rojo);padding:15px 0}
+.main-nav a{color:var(--dorado);text-decoration:none;font-weight:bold;transition:color .3s}
+.main-nav a:hover{color:#fff}
+.banner-formacion{
+  text-align:center;background-color:var(--burdeos);color:var(--dorado);
+  padding:12px 10px;font-size:14px;transition:padding .6s cubic-bezier(.22,.9,.36,1),background-color .3s;will-change:padding
+}
+.banner-texto{opacity:1;max-height:200px;overflow:hidden;transform:translateY(0);
+  transition:opacity .6s cubic-bezier(.22,.9,.36,1),max-height .6s cubic-bezier(.22,.9,.36,1),transform .6s cubic-bezier(.22,.9,.36,1)}
+.sub-banner{font-weight:700;font-size:14px;opacity:1;transition:opacity .45s ease}
+.banner-formacion.minimized{padding:8px 10px}
+.banner-formacion.minimized .banner-texto{opacity:0;transform:translateY(-8px);max-height:0}
+.footer-textos{display:flex;flex-direction:column;gap:4px}
+footer{background-color:var(--burdeos);color:var(--dorado);display:flex;justify-content:space-between;align-items:center;padding:20px 10%}
+footer .redes{display:flex;gap:15px}
+footer small{font-size:14px}
+footer a{color:var(--dorado)}
+.redes img{width:30px;height:30px;border-radius:6px;cursor:pointer;transition:transform .3s}
+.redes img:hover{transform:scale(1.1)}
+
+/* Menu toggle (hamburger) - behavior for mobile kept */
+.menu-toggle{display:none;background:none;border:none;color:var(--dorado);font-size:2rem;cursor:pointer;position:absolute;top:25px;right:20px;z-index:1001}
+.menu-toggle span{display:block;width:100%;height:3px;background-color:var(--dorado);border-radius:2px;transition:all .3s ease}
+.menu-toggle.open span:nth-child(1){transform:translateY(11px) rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0}
+.menu-toggle.open span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
+
+/* sticky modifications */
+.site-header.sticky{box-shadow:0 2px 10px rgba(0,0,0,.3);padding:5px 0}
+.site-header.sticky .logo{width:100px;height:100px}
+.site-header.sticky .banner-formacion{font-size:12px;padding:5px 0}
+
+/* hero spacing handled by JS; keep padding-top consistent */
+.hero{margin-top:0;padding-top:var(--header-height)}
+.hero-content p{color:var(--dorado)}
+
+/* ---- COMMON HERO PROPERTIES (applies to all hero-* classes) ---- */
+/* Combined common rules so each hero only needs a background-image override */
+.hero,
+.hero-blog,
+.hero-portfolio,
+.hero-servicio,
+.hero-servicios,
+.hero-quienes,
+.hero-contacto {
+  background-size:cover;
+  background-position:center;
+  height:500px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+  overflow:hidden;
+  padding:10px;
+}
+
+
+.hero-blog{background-image:url('../images/heroblog.jpg')}
+.hero-portfolio{background-image:url('../images/heroportfolio.jpg')}
+.hero-servicio{background-image:url('../images/heroservicio.jpg')}
+.hero-servicios{background-image:url('../images/heroservicios.jpg')}
+.hero-quienes{background-image:url('../images/heroquienesosmos.jpg')}
+.hero-contacto{background-image:url('../images/herocontacto.jpg')}
+
+/* ---- INDEX (from index.css) ---- */
+.hero{ /* index specifics (keeps parallax overlay from index.css) */
+  background-image:url('../images/heroindex.jpg');
+  background-attachment:scroll; /* default safe value */
+}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6));z-index:1}
+.hero h1{position:relative;font-size:3rem;text-shadow:2px 2px 8px rgba(0,0,0,.7);z-index:2}
+.intro{text-align:center;padding:60px 20px}
+.intro p{max-width:700px;margin:20px auto}
+
+/* que-hacemos & nuestro-estilo sections (index) */
+.que-hacemos,.nuestro-estilo{display:flex;flex-wrap:wrap;padding:60px 10%;gap:40px;align-items:center}
+.que-hacemos .texto,.nuestro-estilo .texto{flex:1 1 400px}
+.que-hacemos .imagen,.nuestro-estilo .imagen{flex:1 1 400px}
+
+/* parallax block */
+.parallax{background-image:url('../images/image1.jpg');background-attachment:fixed;background-position:center;background-size:cover;text-align:center;color:white;padding:120px 20px;position:relative}
+.parallax::before{content:"";position:absolute;inset:0;background-color:rgba(0,0,0,.5)}
+.parallax h2{position:relative;font-size:2rem;color:var(--dorado)}
+
+/* ---- BLOG (from blog.css) ---- */
+.hero-blog::after{content:"";position:absolute;inset:0;background-color:rgba(0,0,0,.45)}
+.hero-blog .hero-content{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.hero-blog h1{font-size:3rem;margin-bottom:.5rem}
+.hero-blog p{font-size:1.2rem}
+.noticias{padding:30px 10%;text-align:center}
+.noticias h2{font-size:2rem;color:var(--rojo);margin-bottom:40px}
+.grid-noticias{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+
+/* context-specific .card for blog to avoid conflicts */
+.grid-noticias .card{
+  background-color:#fff;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,.15);
+  overflow:hidden;transition:transform .3s;display:flex;flex-direction:column
+}
+.grid-noticias .card:hover{transform:translateY(-5px)}
+.grid-noticias .card img{width:100%;height:200px;object-fit:cover}
+.grid-noticias .card h3{font-size:1.2rem;color:var(--rojo);margin:15px 0 10px;padding:0 15px}
+.grid-noticias .card p{font-size:1rem;color:var(--texto);padding:0 15px;flex-grow:1}
+.btn-leer{display:inline-block;background-color:var(--burdeos);color:var(--dorado);text-decoration:none;margin:20px 15px;padding:10px 20px;border-radius:25px;font-weight:700;transition:background-color .3s,transform .3s}
+.btn-leer:hover{background-color:var(--rojo);transform:scale(1.05)}
+
+/* ---- CONTACTO (from contacto.css) ---- */
+.hero-contacto{display:flex;justify-content:center;align-items:center;height:500px;padding:0}
+.hero-contacto .overlay{position:absolute;inset:0;background-color:rgba(0,0,0,.45)}
+.hero-contacto .hero-content{position:relative;text-align:center;z-index:2}
+.hero-contacto h1{font-size:2.5rem;color:var(--dorado);margin-bottom:10px}
+.hero-contacto p{font-size:1.1rem}
+.info-contacto{padding:60px 10%;background-color:var(--crema);text-align:center}
+.info-contacto h2{color:var(--rojo);margin-bottom:40px}
+.info-grid{display:flex;justify-content:center;align-items:flex-start;gap:50px;flex-wrap:wrap}
+.info-grid .columna{flex:1 1 400px}
+.info-grid .izquierda ul{list-style:none;padding:0;text-align:left}
+.info-grid .izquierda li{margin-bottom:15px;font-size:1rem;color:var(--texto)}
+.info-grid iframe{border-radius:8px;box-shadow:0 6px 15px rgba(0,0,0,.1)}
+
+/* formulario */
+.formulario-contacto{padding:70px 10%;text-align:center}
+.formulario-contacto h2{color:var(--rojo);margin-bottom:40px}
+#form-contacto{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.campo{display:flex;flex-direction:column;align-items:flex-start}
+.campo select{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:6px;font-size:1rem;background:#fff;transition:border-color .3s}
+.campo select:focus,.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--rojo)}
+.campo label{margin-bottom:8px;font-weight:600;color:var(--texto)}
+.campo input,.campo textarea{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:6px;font-size:1rem;transition:border-color .3s}
+.btn-enviar{background-color:var(--rojo);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:1rem;cursor:pointer;transition:background-color .3s;align-self:center}
+.btn-enviar:hover{background-color:var(--dorado);color:var(--rojo)}
+
+/* ---- ENTRADA (from entrada.css) ---- */
+.entrada{max-width:900px;margin:100px auto 60px auto;padding:0 20px;font-family:"Poppins",sans-serif;line-height:1.8;color:#333}
+.entrada img{width:100%;height:500px;object-fit:cover;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.15);margin-bottom:40px}
+.entrada h1{text-align:center;font-size:2.4rem;color:#000;margin-bottom:20px;font-weight:700;position:relative}
+.entrada h1::after{content:"";display:block;width:80px;height:3px;background-color:#c0392b;margin:12px auto 0 auto;border-radius:2px}
+.entrada p{text-align:justify;font-size:1.1rem;color:#444;margin-bottom:20px}
+.entrada p + p{margin-top:10px}
+
+/* ---- PORTFOLIO (from portfolio.css) ---- */
+.hero-portfolio{padding:100px 20px}
+.hero-portfolio::after{content:"";position:absolute;inset:0;background-color:rgba(0,0,0,.45)}
+.hero-portfolio .hero-content{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.hero-portfolio h1{font-size:3rem;margin-bottom:.5rem}
+.hero-portfolio p{font-size:1.2rem}
+.categorias{display:flex;justify-content:center;gap:30px;margin:40px auto;padding:15px 30px;background-color:#f9f9f9;border-radius:50px;width:fit-content;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.categorias a{text-decoration:none;font-weight:bold;color:var(--burdeos);transition:color .3s}
+.categorias a:hover{color:var(--rojo)}
+.portfolio-seccion{text-align:center;margin:4rem auto;max-width:1200px;padding:0 1rem; position:relative;}
+.portfolio-seccion h2{color:var(--rojo);margin-bottom:1rem}
+.galeria{display:flex;justify-content:center;flex-wrap:wrap;gap:25px}
+.galeria img{width:300px;height:300px;object-fit:cover;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,.2);transition:transform .3s}
+.galeria img:hover{transform:scale(1.05)}
+/* carrusel */
+.galeria-carrusel{position:relative;overflow:hidden;width:100%;height:450px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#000}
+.galeria-carrusel img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease-in-out;z-index:0}
+.galeria-carrusel img.active{opacity:1;z-index:1}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background-color:rgba(0,0,0,.5);color:#f5d15f;border:none;padding:10px 15px;font-size:2rem;cursor:pointer;border-radius:50%;z-index:10;transition:background-color .3s,transform .2s;user-select:none}
+.carousel-btn:hover{background-color:rgba(0,0,0,.8);transform:translateY(-50%) scale(1.1)}
+.carousel-btn.prev{left:15px}
+.carousel-btn.next{right:15px}
+
+/* ---- QUIENES SOMOS (from quienes_somos.css) ---- */
+.hero-quienes::after{content:"";position:absolute;inset:0;background-color:rgba(0,0,0,.4)}
+.hero-quienes .hero-content{position:relative;text-align:center;z-index:2}
+.hero-quienes h1{font-size:2.5rem;margin-bottom:10px}
+.historia{padding:60px 10%;text-align:center}
+.historia h2{margin-bottom:20px}
+.historia p{max-width:800px;margin:0 auto 30px;line-height:1.7}
+.historia img{border-radius:10px;width:100%;height:auto;max-width:900px;margin:0 auto;display:block;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.equipo{padding:60px 10%;text-align:center}
+.equipo h2{margin-bottom:40px}
+.miembros{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:flex-start}
+.persona{width:180px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.persona img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:12px;display:block}
+.persona h3{margin:0 0 6px;color:var(--rojo);font-size:1.05rem;line-height:1.1;width:100%;text-align:center}
+.filosofia{padding:80px 10%;background-color:var(--crema);text-align:center}
+.filosofia h2{text-align:center;margin-bottom:10px;color:var(--rojo);font-family:'Noto Serif TC',serif;font-size:2rem}
+.filosofia-contenido{display:flex;justify-content:center;align-items:center;gap:80px;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+.valores{flex:1 1 300px;max-width:500px;text-align:left}
+.valores ul{list-style-type:disc;padding-left:20px}
+.valores li{margin-bottom:12px;line-height:1.6;font-size:1rem;color:var(--texto)}
+.imagenes-valores{flex:1 1 300px;position:relative;width:400px;height:480px;display:flex;justify-content:center;align-items:center}
+.imagenes-valores img{width:250px;height:250px;object-fit:cover;border-radius:12px;position:absolute;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:transform .3s ease}
+.imagenes-valores img:first-child{top:0;right:0;z-index:2}
+.imagenes-valores img:last-child{bottom:0;left:0;z-index:1}
+.imagenes-valores img:hover{transform:scale(1.03)}
+
+/* ---- SERVICIO (from servicio.css) ---- */
+.hero-servicio::after{content:"";position:absolute;inset:0;background-color:rgba(0,0,0,.5)}
+.hero-content{position:relative;z-index:2}
+.hero-content h1{font-size:3rem;margin-bottom:10px}
+.descripcion{text-align:center;padding:60px 10%}
+.descripcion h2{color:var(--rojo);font-size:2rem;margin-bottom:20px}
+.descripcion p{font-size:1.1rem;color:var(--texto);line-height:1.6}
+.galeria{padding:60px 10%;text-align:center; display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; flex-direction: column;}
+.galeria h2{font-size:2rem;color:var(--rojo);margin-bottom:30px}
+.video-container{margin-bottom:40px}
+.video-container video{width:100%;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.imagenes{display: flex; gap: 20px; flex-wrap: wrap;align-content: space-around; flex-direction: column; align-items: stretch;}
+.imagenes img{width:60%;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,.15);transition:transform .3s}
+.imagenes img:hover{transform:scale(1.05)}
+.contacta{text-align:center;padding:80px 10%;color:var(--dorado)}
+.contacta h2{font-size:2rem;margin-bottom:20px}
+.btn-contacto{background-color:var(--dorado);color:var(--burdeos);text-decoration:none;padding:12px 30px;border-radius:25px;font-weight:bold;transition:background-color .3s,transform .3s}
+.btn-contacto:hover{background-color:var(--rojo);color:#fff;transform:scale(1.05)}
+
+/* ---- SERVICIOS (from servicios.css) ---- */
+/* context-specific .card for services grid to avoid conflict with blog cards */
+.servicios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;padding:20px 10%}
+.servicios-grid .card{background-color:var(--crema);border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.1);display:flex;flex-direction:column;text-align:center}
+.servicios-grid .card img{height:200px;object-fit:cover}
+.servicios-grid .card h3{color:var(--rojo);margin:15px 0 10px}
+.servicios-grid .card p{padding:0 15px;margin-bottom:15px}
+.btn{background-color:var(--rojo);color:var(--dorado);text-decoration:none;padding:10px 20px;margin-bottom:20px;border-radius:5px;transition:all .3s}
+.btn:hover{background-color:var(--burdeos)}
+
+/* ---- BUTTON BASE (unify variants) ---- */
+.btn, .btn-leer, .btn-contacto, .btn-enviar { font-weight:700; cursor:pointer; border-radius:8px }
+.btn{display:inline-block;text-decoration:none}
+.btn-leer{border-radius:25px;padding:10px 20px}
+.btn-contacto{border-radius:25px;padding:12px 30px}
+.btn-enviar{padding:12px 24px;border-radius:8px}
+
+/* ---- UTIL / ANIMATIONS ---- */
+.fade{opacity:0;transform:translateY(40px);transition:opacity .9s ease-out,transform .9s ease-out;will-change:opacity,transform}
+.fade.visible{opacity:1;transform:translateY(0)}
+
+/* ======================================================
+   responsive-425.css
+   Consolidado: reglas exclusivamente para pantallas <=425px
+   Basado en layout.css, index.css, blog.css, servicio.css, quienes_somos.css...
+   ====================================================== */
+
+/* Variables de ayuda (si no existen ya en el cascade) */
+:root {
+  --header-height-mobile: 110px; /* altura del header en móvil (ajustable) */
+}
+
+/* ===== Aplicaciones globales sólo para móvil <=425px ===== */
+@media (max-width: 425px) {
+
+  /* Asegurar que el header fijo no tape el contenido */
+  /* Si ya tienes padding-top en hero desde layout, esta línea evita duplicados
+     pero garantiza espacio para el header. Ajusta --header-height-mobile si hace falta */
+  body {
+    padding-top: calc(var(--header-height-mobile));
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ---------------------------
+     HEADER / LOGO / MENÚ HAMBURGUESA
+     --------------------------- */
+
+  /* Header fijo y centrado (tomado/ajustado desde layout.css) */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--burdeos);
+  }
+
+  /* Asegurar tamaño razonable del logo en móvil para que no empuje el hero */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .logo {
+    margin: 0;
+    width: 110px;   /* reducido para no empujar el hero */
+    height: 110px;
+    object-fit: contain;
+    transition: all 0.25s ease;
+  }
+
+  .site-header.sticky .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Botón hamburguesa: visible y accesible por encima */
+  .menu-toggle {
+    display: flex;               /* forzamos visible en móvil */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5000;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Las tres barras del icono */
+  .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--dorado);
+    border-radius: 3px;
+    transition: transform 0.28s cubic-bezier(.2,.8,.2,1), opacity 0.2s;
+    transform-origin: center;
+    margin: 3px 0;
+  }
+
+  /* Estado abierto (X) - corrección: translateY con valores simétricos */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+  }
+
+  .imagenes img{width:80%;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,.15);transition:transform .3s}
+
+
+  /* Nav desplegable (se superpone al contenido, no lo empuja) */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--rojo);
+    position: absolute;
+    top: 100%; /* empieza justo después del header fijo */
+    left: 0;
+    width: 100%;
+    padding: 12px 0 18px;
+    border-bottom: 2px solid var(--dorado);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 2000;
+  }
+
+  /* Clase para mostrar nav desde JS: .main-nav.active */
+  .main-nav.active {
+    display: flex;
+    animation: slideDown 0.28s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Si el nav tiene links en fila, forzamos estilo móvil legible */
+  .main-nav a {
+    display: block;
+    padding: 10px 18px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* ---------------------------
+     HERO (unificado para todas las variantes)
+     Evita que un hero específico crezca demasiado y armoniza tipografías
+     --------------------------- */
+
+  /* Aplicamos la misma altura a todos los "hero" de páginas distintas */
+  .hero,
+  .hero-blog,
+  .hero-contacto,
+  .hero-portfolio,
+  .hero-servicio,
+  .hero-quienes,
+  .hero-servicios {
+    height: 300px !important;           /* fuerza un tamaño móvil consistente */
+    min-height: 300px;
+    max-height: 360px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;                 /* control de padding */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Superposición / overlay: mantener contraste */
+  .hero::before,
+  .hero-blog::after,
+  .hero-contacto .overlay,
+  .hero-portfolio::after,
+  .hero-servicio::after,
+  .hero-quienes .overlay,
+  .hero-servicios .overlay {
+    /* No todos estos selectores existirán en cada HTML; es seguro presentarlos */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.45);
+    z-index: 1;
+  }
+
+  /* Contenido interno del hero centrado y con tamaño legible */
+  .hero h1,
+  .hero-blog h1,
+  .hero-contacto h1,
+  .hero-portfolio h1,
+  .hero-servicio h1,
+  .hero-quienes h1,
+  .hero-servicios h1,
+  .hero .hero-content h1,
+  .hero-blog .hero-content h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    line-height: 1.05;
+    margin: 0 6px;
+    text-align: center;
+    color: var(--dorado);
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  }
+
+  .hero p,
+  .hero-blog p,
+  .hero-contacto p,
+  .hero-portfolio p,
+  .hero-servicio p,
+  .hero-quienes p,
+  .hero-servicios p,
+  .hero .hero-content p {
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    margin-top: 6px;
+    max-width: 100%;
+  }
+
+  /* Asegurar que el contenido centrado (transform translate) no desborde */
+  .hero .hero-content,
+  .hero-blog .hero-content,
+  .hero-portfolio .hero-content {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 6px 8px;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* ---------------------------
+     Ajustes de tipografías / bloques generales (móvil)
+     --------------------------- */
+
+  /* Intro / secciones */
+  .intro {
+    padding: 15px 12px 6px 12px;
+  }
+  .intro h1 { font-size: 1.6rem; }
+  .intro p  { font-size: 0.95rem; margin: 10px auto; }
+
+  /* Grid -> convertir a columna única */
+  .grid-noticias,
+  .servicios-grid,
+  .galeria,
+  .galeria-carrusel {
+    grid-template-columns: 1fr !important;
+    display: block;
+        height: 233px
+  }
+
+  .card,
+  .card img {
+    width: 100%;}
+
+  .card {
+    margin-bottom: 30px;
+    border-radius: 12px; /* opcional para que se vean más limpias */
+    overflow: hidden;
+  }
+  
+  /* Formularios / secciones de contacto */
+  .info-contacto,
+  .formulario-contacto,
+  .descripcion,
+  .galeria,
+  .contacta,
+  .historia,
+  .filosofia {
+    padding: 20px 12px;
+  }
+
+  #form-contacto {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Imagenes grandes: limitar altura para que no crezcan demasiado */
+  .entrada img,
+  .galeria-carrusel img,
+  .galeria img {
+    height: -webkit-fill-availableo;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* Equipo / miembros */
+  .miembros,
+  .persona {
+    gap: 12px;
+    margin: 0 auto;
+  }
+
+  .persona img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Parallax: evitar fixed en móvil (toma idea de index.css) */
+  .parallax {
+    background-attachment: scroll;
+    padding: 40px 12px;
+  }
+@media (max-width: 425px) {
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* textos a la izquierda / redes a la derecha */
+    align-items: center;
+    text-align: left; /* aseguro que el texto no quede centrado */
+    padding: 20px 12px;
+    gap: 12px;
+  }
+
+  /* Contenedor del texto (small) */
+  footer .footer-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+  }
+
+  footer .footer-text small,
+  footer .footer-text a {
+    text-align: left !important;
+  }
+
+  /* Contenedor de redes */
+  footer .redes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  footer .redes img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+  /* Botones: mejor tamaño táctil */
+  .btn,
+  .btn-leer,
+  .btn-contacto,
+  .btn-enviar {
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    
+  }
+
+  .carousel-btn {
+    top: 66%;
+  }
+
+  #catering img{
+
+  }
+
+
+  /* Pequeñas correcciones para evitar solapamientos con header */
+  /* Si usas JS para alternar .site-header.sticky, las reglas inferiores ayudan */
+  .site-header {
+    will-change: transform;
+  }
+
+  /* arreglos extra: asegurar z-index del hero-content por encima del nav desplegable cuando necesario */
+  .hero, .hero * {
+    z-index: 0;
+  }
+  .hero .hero-content,
+  .hero h1, .hero p {
+    z-index: 2;
+  }
+
+  /* Corregir comportamiento de iconos/redes si aparecen en header */
+  .redes {
+    padding: 10px 0 0 0;
+  }
+
+  /* Pequeña animación para hacer la apertura del menú más suave (opcional) */
+  .main-nav a {
+    transition: background-color 0.18s ease, transform 0.12s ease;
+  }
+
+  /* Accessibility: aumentar target tap area si el menú no responde bien */
+  .menu-toggle,
+  .main-nav a {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    flex-wrap: wrap;
+  }
+
+  footer .footer-textos {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+  }
+
+  footer .footer-textos small,
+  footer .footer-textos a {
+    text-align: left !important;
+  }
+
+  /* Deshacer la regla problemática que fija la altura de grid-noticias en móvil */
+  .grid-noticias .servicios-grid{
+    display: block !important;
+    height: auto !important; /* permitir que el contenido marque la altura */
+  }
+}
+
+

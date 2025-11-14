@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Restaurante La Esquina</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="logo-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/5900/5900415.png" alt="Logo Restaurante El Chino de la Esquina" class="logo">
+      <a href="index.html"><img src="images/logo.webp" alt="Logo Restaurante La Esquina" class="logo"></a>
     </div>
+
+  <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <nav class="main-nav">
       <a href="index.html">Inicio</a>
@@ -31,7 +36,7 @@
     </div>
   </div>
   </header>
-
+<main>
   <!-- HERO -->
   <section class="hero-portfolio">
     <div class="hero-content">
@@ -53,12 +58,12 @@
     <p>Una selección de nuestras creaciones gastronómicas más representativas, donde tradición y vanguardia se fusionan en cada bocado.</p>
 
     <div class="galeria-carrusel">
-      <img src="https://images.unsplash.com/photo-1600891963935-c4e05559b1ce" alt="Plato oriental 1">
-      <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc" alt="Plato oriental 2">
-      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="Plato oriental 3">
+      <img src="images/image4.jpg" alt="Plato variado oriental">
+      <img src="images/image11.jpg" alt="Enormevariedad de platos de la casa">
+      <img src="images/image10.jpg" alt="Plato de ramen">
     </div>
-    <button class="carousel-btn prev">⟨</button>
-    <button class="carousel-btn next">⟩</button>
+      <button class="carousel-btn prev" aria-label="Anterior">⟨</button>
+      <button class="carousel-btn next" aria-label="Siguiente">⟩</button>
   </section>
 
   <!-- SECCIÓN EVENTOS -->
@@ -67,12 +72,12 @@
     <p>Organizamos eventos privados con ambientación oriental, música y gastronomía personalizada para cada ocasión.</p>
 
     <div class="galeria-carrusel">
-      <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6" alt="Evento 1">
-      <img src="https://images.unsplash.com/photo-1555992336-cbfdbcad229e" alt="Evento 2">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Evento 3">
+      <img src="images/image8.jpg" alt="Evento con multitud de personas">
+      <img src="images/image3.jpg" alt="Salón del restaurante">
+      <img src="images/image9.jpg" alt="Platos especiales de eventos">
     </div>
-    <button class="carousel-btn prev">⟨</button>
-    <button class="carousel-btn next">⟩</button>
+      <button class="carousel-btn prev" aria-label="Anterior">⟨</button>
+      <button class="carousel-btn next" aria-label="Siguiente">⟩</button>
 
   </section>
 
@@ -82,29 +87,29 @@
     <p>Un servicio gourmet diseñado para sorprender a tus invitados con sabores únicos, elegancia y atención impecable.</p>
 
     <div class="galeria-carrusel">
-      <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" alt="Catering 1">
-      <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d" alt="Catering 2">
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Catering 3">
+      <img src="images/image5.jpg" alt="Plato oriental">
+      <img src="images/image4.jpg" alt="Plato de catering">
+      <img src="images/image12.jpg" alt="Plato vegetal">
     </div>
-    <button class="carousel-btn prev">⟨</button>
-    <button class="carousel-btn next">⟩</button>
+      <button class="carousel-btn prev" aria-label="Anterior">⟨</button>
+      <button class="carousel-btn next" aria-label="Siguiente">⟩</button>
   </section>
-
+</main>
   <!-- FOOTER -->
   <footer>
-    <small>© 2025 Restaurante El Chino de la Esquina. Todos los derechos reservados.</small>
-    <div class="redes">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="X">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-    </div>
-  </footer>
+  <div class="footer-textos">
+    <small>© 2025 Restaurante La Esquina. Todos los derechos reservados.</small>
+    <small><a href="politica_privacidad.html">Nuestra política de privacidad</a></small>
+  </div>
 
-  <script src="js/menu_hamburguesa.js"></script>
-  <script src="js/menu_fijo.js"></script>
-  <script src="js/banner_formacion_scroll.js"></script>
-  <script src="js/fadeSections.js"></script>
-  <script src="js/portfolioCarousel.js"></script>
+  <div class="redes">
+    <a href="instagram.com"><img src="images/Instagram_logo_2022.svg" alt="Instagram"></a>
+    <a href="twitter.com"><img src="images/Logo_of_Twitter.svg" alt="X"></a>
+    <a href="facebook.com"><img src="images/Facebook_f_logo_(2019).svg" alt="Facebook"></a>
+  </div>
+</footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
 

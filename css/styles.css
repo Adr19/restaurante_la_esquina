@@ -255,6 +255,26 @@ footer a{color:var(--dorado)}
 .servicios-grid .card p{padding:0 15px;margin-bottom:15px}
 .btn{background-color:var(--rojo);color:var(--dorado);text-decoration:none;padding:10px 20px;margin-bottom:20px;border-radius:5px;transition:all .3s}
 .btn:hover{background-color:var(--burdeos)}
+/* Overlay para hero-servicios (desktop + móvil) */
+.hero-servicios {
+  position: relative; /* aseguramos stacking context */
+}
+
+.hero-servicios::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* oscuridad */
+  z-index: 1;
+}
+
+/* Asegurar que el contenido del hero quede encima */
+.hero-servicios .hero-content,
+.hero-servicios h1,
+.hero-servicios p {
+  position: relative;
+  z-index: 2;
+}
 
 /* ---- BUTTON BASE (unify variants) ---- */
 .btn, .btn-leer, .btn-contacto, .btn-enviar { font-weight:700; cursor:pointer; border-radius:8px }
@@ -632,10 +652,6 @@ footer a{color:var(--dorado)}
     top: 66%;
   }
 
-  #catering img{
-
-  }
-
 
   /* Pequeñas correcciones para evitar solapamientos con header */
   /* Si usas JS para alternar .site-header.sticky, las reglas inferiores ayudan */
@@ -689,6 +705,100 @@ footer a{color:var(--dorado)}
     display: block !important;
     height: auto !important; /* permitir que el contenido marque la altura */
   }
+
+
+  .grid-noticias,
+  .servicios-grid,
+  .galeria,
+  .galeria-carrusel {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;   /* <-- aquí quitamos la altura fija 233px */
+    min-height: 0 !important;
+    padding-bottom: 8px !important;
+}
+/* --- MÓVIL: mantener efecto carrusel y evitar que las imágenes se reduzcan a "líneas" --- */
+/* Pegar al final de css/styles.css, reemplazando cualquier bloque anterior para .galeria-carrusel en @media (max-width: 425px) */
+
+@media (max-width: 425px) {
+
+  /* Contenedor: usar un aspect-ratio (o padding-top) para reservar altura
+     y permitir que imágenes posicionadas absolute ocupen ese espacio.
+     Esto mantiene el efecto de carrusel (fade/slide) igual que en desktop. */
+  .galeria-carrusel {
+    position: relative !important;
+    width: 100% !important;
+    /* 16:9 por defecto — cámbialo si tus imágenes tienen otra proporción */
+    aspect-ratio: 16 / 9;
+    height: auto !important;        /* para navegadores que no soporten aspect-ratio */
+    min-height: 180px !important;   /* seguridad para pantallas muy pequeñas */
+    overflow: hidden !important;
+    display: block !important;
+    background: transparent !important;
+  }
+
+  /* Las imágenes del carrusel deben cubrir el contenedor y estar apiladas (absolute),
+     así el JS/carrusel puede mostrar/ocultar con opacidades o transformaciones. */
+  .galeria-carrusel img {
+    position: absolute !important;
+    inset: 0 !important;            /* top:0; right:0; bottom:0; left:0; */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    max-height: none !important;
+    opacity: 1 !important;          /* el JS del carrusel controlará la visibilidad si aplica */
+    z-index: 0 !important;
+  }
+
+  /* Botones y controles: mantener visibles (si los ocultaste antes) */
+  .carousel-btn {
+    display: block !important;
+    z-index: 5 !important;
+  }
+
+  /* Si usas indicadores (dots), mantenerlos encima */
+  .carousel-dots {
+    z-index: 6 !important;
+  }
 }
 
+/* --- Corregir la errata global en la regla de imágenes (fuera de la media query) --- */
+.galeria-carrusel img,
+.galeria img,
+.entrada img {
+  /* corregido: -webkit-fill-available (sin 'o' final) */
+  height: -webkit-fill-available;
+  object-fit: cover;
+  /* si quieres, limita altura máxima en desktop: */
+  max-height: 600px;
+}
+/* FIX mínimo: asegurar que los botones del carrusel reciben clicks */
+
+/* 1) Forzar que los botones estén por encima de las imágenes */
+.portfolio-seccion .carousel-btn {
+  position: absolute;        /* ya lo son, reafirmamos */
+  z-index: 9999 !important;  /* muy por encima para evitar stacking-context surprises */
+  pointer-events: auto !important;
+}
+
+/* 2) Evitar que imágenes inactivas bloqueen clicks.
+   Dejamos que la imagen visible (active) pueda responder si tu JS lo necesita. */
+.galeria-carrusel img {
+  pointer-events: none !important;     /* imágenes no capturan clicks por defecto */
+}
+
+/* Permitir pointer-events en la imagen activa (si tu JS marca .active) */
+.galeria-carrusel img.active {
+  pointer-events: auto !important;
+  z-index: 2 !important; /* aseguramos que la activa quede por debajo de los botones pero encima de fondo */
+}
+
+/* 3) En móvil: asegurar que el contenedor no cree stacking context indeseado.
+   (solo ajuste sutil, no cambia diseño visual) */
+.portfolio-seccion {
+  position: relative; /* ya lo tienes, reafirmamos para evitar que el botón se relacione con otro ancestro */
+  z-index: 1;         /* base baja; los botones usan z-index alto */
+}
+
+}
 

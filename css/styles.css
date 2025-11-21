@@ -298,6 +298,16 @@ footer a{color:var(--dorado)}
   --header-height-mobile: 110px; /* altura del header en móvil (ajustable) */
 }
 
+.error{
+  height:70vh;
+}
+.error-img {
+  padding-top: 50px;
+  width: min(80%, 350px);
+  display: block;
+  margin: 20px auto;
+}
+
 /* ===== Aplicaciones globales sólo para móvil <=425px ===== */
 @media (max-width: 425px) {
 
@@ -586,6 +596,7 @@ footer a{color:var(--dorado)}
     margin: 0 auto;
   }
 
+
   .persona img {
     width: 120px;
     height: 120px;
@@ -596,6 +607,10 @@ footer a{color:var(--dorado)}
     background-attachment: scroll;
     padding: 40px 12px;
   }
+
+
+
+
 @media (max-width: 425px) {
 
   footer {

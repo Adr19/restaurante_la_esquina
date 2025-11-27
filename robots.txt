@@ -1,0 +1,22 @@
+# robots.txt para Restaurante La Esquina
+# Optimizado según la estructura del sitio
+
+User-agent: *
+
+# Permitir el acceso a todas las páginas útiles
+Allow: /
+
+# Bloquear la página de error
+Disallow: /404.html
+
+# Bloquear carpetas que no aportan contenido SEO
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+
+# Permitir el acceso al resto (blog, servicios, etc.)
+Allow: /blog/
+Allow: /servicios/
+
+# Incluir el sitemap para facilitar el rastreo
+Sitemap: https://adr19.github.io/restaurante_la_esquina/sitemap.xml
